@@ -1,0 +1,6 @@
+%{
+  "distance": {:hex, :distance, "0.2.2", "76f7cd6b6e21b3c1430a0776d594955baafd9ebf1133f98f62cdbb180074215a", [:mix], [], "hexpm"},
+  "envelope": {:hex, :envelope, "1.1.0", "77a479fd86f051059d4e9913dc4ecda42c5a4ea0d77e19f18ee3e6d383665b70", [:mix], [{:distance, "~> 0.2.1", [hex: :distance, repo: "hexpm", optional: false]}, {:geo, "~> 1.0 or ~> 2.0", [hex: :geo, repo: "hexpm", optional: false]}], "hexpm"},
+  "geo": {:hex, :geo, "2.1.0", "f9a7a1403dde669c4e3f1885aeb4f3b3fb4e51cd28ada6d9f97463e5da65c04a", [:mix], [{:ecto, "~> 2.1", [hex: :ecto, repo: "hexpm", optional: true]}, {:poison, "~> 3.0", [hex: :poison, repo: "hexpm", optional: true]}], "hexpm"},
+  "nimble_csv": {:hex, :nimble_csv, "0.4.0", "e2a21d93071cb3b3278411b5b49fe6b55a0e4b3e90485d1187e0c9c75c74f977", [:mix], [], "hexpm"},
+}
