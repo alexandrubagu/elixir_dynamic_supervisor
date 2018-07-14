@@ -12,12 +12,12 @@ defmodule TestApp.Builder.Coordinates do
         x = String.to_float(lat)
         y = String.to_float(long)
 
-        managers = TestApp.Application.get_managers
-        for {_, pid, :worker, [TestApp.BoxManager]} <- managers do
+        managers_pids = TestApp.BoxManager.get_all_managers_pids
+        for {_, pid, :worker, [TestApp.BoxManager]} <- managers_pids do
           box = TestApp.BoxManager.get_box(pid)
           if Envelope.contains?(box, {x, y}) do
-            point = %Point{lat: x, long: y}
-            IO.inspect "add to pid = #{inspect pid} point = #{inspect point}"
+            ### Debug ###
+            # IO.inspect "add to pid = #{inspect pid} point = #{inspect %Point{lat: x, long: y}}"
 
             TestApp.BoxManager.add_point(pid, %Point{lat: x, long: y})
           end

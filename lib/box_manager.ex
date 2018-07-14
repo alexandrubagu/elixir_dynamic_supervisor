@@ -26,6 +26,17 @@ defmodule TestApp.BoxManager do
     GenServer.cast(pid, {:add_point, point})
   end
 
+  def get_all_managers_pids do
+    DynamicSupervisor.which_children(TestApp.BoxSupervisor)
+  end
+
+  def get_all_boxes do
+    get_all_managers_pids()
+    |> Enum.map(fn {_, pid, :worker, [TestApp.BoxManager]} ->
+      __MODULE__.get_box(pid)
+    end)
+  end
+
   def handle_call(:get_box, _from, %{box: box} = state) do
     {:reply, box, state}
   end
