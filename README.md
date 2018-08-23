@@ -1,17 +1,18 @@
 # TEST
 
 ### Install
-1. mix deps.get - get dependencies
-2. iex -S mix - start project
+1. ```mix deps.get``` - get dependencies
+2. ```iex -S mix - start project```
 
 ### How to run it (iex console)
 1. Run TestApp.Main.run:
-
+```
 iex(1)> TestApp.Main.run
 :ok
+```
 
 2. You can integorate the API using the following calls:
-
+```
 iex(2)> TestApp.Tracker.query(%{"origin" => {120.9917, 14.6364}, "destination" => {1, 2}})
 %TestApp.Tracker{
   arg: %{"destination" => {1, 2}, "origin" => {120.9917, 14.6364}},
@@ -117,6 +118,4 @@ iex(6)> TestApp.Tracker.get_queries
     matching_origin: nil
   }
 }
-
-
-
+```
